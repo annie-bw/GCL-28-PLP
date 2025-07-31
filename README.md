@@ -31,7 +31,6 @@ This system is written in Python and uses a local SQLite database to store data.
 
 **Requirements**
 Python 3.x
-
 No external libraries needed — just Python’s built-in sqlite3
 
 **How to Use It**
