@@ -6,7 +6,7 @@
 
 ##  Why We Built This
 
-In many communities, local businesses struggle to be found. Their information isn’t available online, and word of mouth can only go so far. People often don't know where to get affordable services close to home unless they physically go out searching.
+In many communities, local businesses struggle to be found. Their information isn’t available online, and word of mouth is slow. People often don't know where to get affordable services close to home unless they physically go out searching.
 
 **Local Connect** was built to solve this challenge — to help connect people to local businesses through a centralized, accessible, and easy-to-use platform.
 
