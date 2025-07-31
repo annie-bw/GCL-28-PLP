@@ -249,3 +249,32 @@ def get_avg_rating(business_id):
     conn.close()
     return round(result, 1) if result else "No Ratings yet"
 
+# ----- MAIN MENU -----
+def main():
+    create_tables()
+    while True:
+        print("\n…………… Welcome to Local Connect ……………")
+        print("1. Add Business")
+        print("2. View All Businesses")
+        print("3. Search Businesses")
+        print("4. Leave Review")
+        print("5. Exit")
+        choice = input("Choose (1/2/3/4/5): ")
+
+        if choice == '1':
+            add_business()
+        elif choice == '2':
+            view_businesses()
+        elif choice == '3':
+            search_businesses()
+        elif choice == '4':
+            leave_review()
+        elif choice == '5':
+            print(">>> Goodbye!")
+            break
+        else:
+            print("❌ Invalid choice. Please select 1-5.\n")
+
+
+if __name__ == "__main__":
+    main()
