@@ -39,8 +39,9 @@ This system is written in **Python** and uses a local **SQLite** database to sto
 
 ##  Requirements
 
-- Python 3.x  
-- No external libraries — only Python’s built-in `sqlite3` module  
+- Python 3.13  
+- No external libraries — only Python’s built-in `sqlite3` module
+- If you want to review  database details in VSCode, the extension of SQLite Viewer/Explorer by alexcvzz will be very helpful.  
 
 ---
 
