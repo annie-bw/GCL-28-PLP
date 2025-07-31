@@ -6,7 +6,7 @@ In many communities, local businesses struggle to be found. Their information is
 
 Local Connect was built to solve this challenge — to help connect people to local businesses through a centralized, accessible, and easy-to-use platform.
 
-🎯 What You Can Do With Local Connect
+**What You Can Do With Local Connect**
 🏪 Add new businesses to the system
 
 🔎 Search businesses by location and category (e.g., “salon in Kimironko”)
