@@ -158,7 +158,6 @@ def search_businesses():
 
 # ----- LEAVE A REVIEW -----
 
-
 def leave_review():
     while True:
         reviewer_name = input(
@@ -248,7 +247,6 @@ def get_avg_rating(business_id):
     result = c.fetchone()[0]
     conn.close()
     return round(result, 1) if result else "No Ratings yet"
-
 # ----- MAIN MENU -----
 def main():
     create_tables()
