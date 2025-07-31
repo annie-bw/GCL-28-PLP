@@ -38,19 +38,55 @@ def create_tables():
 def add_business():
     print("\nYou have selected: Add a New Business")
     print("-----------------------------------")
-    name = input("Enter business name: ")
-    category = input("Enter category (e.g., Restaurant, Salon): ")
-    location = input("Enter location (city or area): ").lower()
-    contact = input("Enter contact (Phone or Email): ")
-    website = input("Enter website (optional): ")
+
+    while True:
+        name = input("Enter business name: ").strip()
+        if name:
+            break
+        print("❌ Business name cannot be empty.")
+
+    while True:
+        category = input("Enter category (e.g., Restaurant, Salon): ").strip()
+        if category:
+            break
+        print("❌ Category cannot be empty.")
+
+    while True:
+        location = input("Enter location (city or area): ").strip().lower()
+        if location:
+            break
+        print("❌ Location cannot be empty.")
+
+    while True:
+        contact = input("Enter contact (Phone or Email): ").strip()
+        if contact:
+            break
+        print("❌ Contact cannot be empty.")
+
+    while True:
+        website = input("Enter website: ").strip()
+        if website:
+            break
+        print("❌ website cannot be empty.")
 
     conn = sqlite3.connect("local_connect.db")
     cursor = conn.cursor()
-    cursor.execute("""
-    INSERT INTO businesses (name, category, location, contact, website)
-    VALUES (?, ?, ?, ?, ?)
-    """, (name, category, location, contact, website))
+    # Check for exact duplicate
+    cursor.execute('''
+        SELECT * FROM businesses
+        WHERE name = ? AND location = ? AND category = ? AND contact = ? AND website = ?
+    ''', (name, location, category, contact, website))
+
+    if cursor.fetchone():
+        print("❌ Business already exists with the same details. Try again.")
+        conn.close()
+        return
+    # Insert new business
+    cursor.execute('''
+        INSERT INTO businesses (name, location, category, contact, website)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (name, location, category, contact, website))
     conn.commit()
     conn.close()
-    print(f"✔ {name} has been added successfully!\n")
+    print(f"✅ {name} has been added successfully!\n")
 
